@@ -1,0 +1,69 @@
+.container-card-esp {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.especializaciones-card {
+  margin-top: 1.5rem;
+  max-width: 393px;
+  height: 400px;
+  perspective: 1000px; /* Agrega profundidad al efecto 3D */
+}
+
+.text-contai {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container-links {
+  background-color: hsl(217, 19%, 35%);
+  position: absolute;
+  top: -60%;
+  right: -10px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.5em;
+  width: 210px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 9px;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid hsl(217, 19%, 35%);
+  }
+}
+
+.btns-back {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blanco);
+  max-height: 50px;
+}
+
+@media (min-width: 420px) and (max-width: 510px) {
+  .container-card-esp {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .text-contai {
+    justify-content: flex-start;
+  }
+}

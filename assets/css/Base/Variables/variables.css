@@ -1,0 +1,31 @@
+:root {
+  /*<-----COLORES PRINCIPALES----->*/
+  --violeta: #6c2eb9;
+  --blanco: #f9f9f9;
+  --negro: rgb(21, 21, 21);
+
+  /*<-----COLORES SECUNDARIOS----->*/
+  --amarillo-pastel: #e8fd71;
+  --amarillo-fuerte: #fbf11b;
+  --azul-pastel: #86cff9;
+  --azul-dark: #7dbadd;
+
+  /*/------------------->HEADER CURSOS Y ESPE<------------/*/
+  --violeta-oscuro: #4f1f85;
+  --violeta-grayish: #5a22a0;
+  --violeta-claro: #723bb9;
+
+  /*<-----FONTS------>*/
+  --gris-claro: #c6c6c6;
+  --gris-mas-oscuro: #6a6a6a;
+  --violeta-claro: #8580bb;
+  --blanco-rosado: #ffdbff;
+
+  /*<------TESTIMONIOS----->*/
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+
+  /*<------PREGUNTAS FRECUENTES*/
+  --Dark-purple: hsl(292, 42%, 14%);
+}

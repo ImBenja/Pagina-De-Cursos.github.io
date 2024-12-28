@@ -1,0 +1,21 @@
+.explicacion-card {
+  background-color: var(--blanco);
+  max-width: 290px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.explicacion-card .img-exp {
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px 10px 10px 10px;
+}
+
+@media (min-width: 420px) and (max-width: 510px) {
+  .explicacion-card {
+    max-width: 500px;
+    .img-exp {
+      height: 183px;
+    }
+  }
+}

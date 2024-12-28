@@ -1,0 +1,116 @@
+.btn-esp {
+  background-color: #f3f3f3;
+  border: 1px solid gray;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  color: var(--violeta-fuerte);
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 500;
+  margin-top: 1.4rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    background-color: var(--amarillo-fuerte);
+    border: none;
+  }
+}
+.especializaciones-card .btn-esp.volver {
+  width: 70%;
+}
+
+.btn-details {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--violeta); /* Naranja brillante */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  &:hover {
+    background-color: #e67e00; /* Oscurecer al pasar el cursor */
+    transform: scale(1.05); /* Ampliar ligeramente */
+  }
+}
+
+.btn-social {
+  margin-top: 1rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--violeta);
+  border: 2px solid #d8d8d8;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-social.like,
+.btn-social.share {
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  .bi-heart-fill,
+  .bi-share-fill {
+    font-size: 1.2rem;
+    color: #ffffff; /* Color del corazón */
+  }
+}
+
+.btn-social.like.activated .bi-heart-fill {
+  color: #e63946; /* Color más intenso al activarse */
+}
+.btn-social.like .like-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #ff6b6b;
+  animation: pop 0.5s ease forwards;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+.btn-back {
+  width: 50%;
+  height: 50px;
+  border: 1px solid rgb(152, 152, 152);
+  font-size: 1.2em;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: var(--blanco);
+}
+.btn-back.btn1 {
+  border-top-left-radius: 20px;
+  background-color: var(--azul-dark);
+}
+.btn-back:last-child {
+  border-top-right-radius: 20px;
+  cursor: pointer;
+  background-color: var(--azul-pastel);
+}
+.btn-back.activeBtn {
+  background-color: var(--azul-dark);
+  transition: 0.5s;
+}
+.btn-back.desactiveBtn {
+  background-color: var(--azul-pastel);
+  transition: 0.5s;
+  cursor: pointer;
+}

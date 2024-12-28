@@ -1,0 +1,10 @@
+.sub-title-logro {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.item .title-logro {
+  color: var(--violeta);
+  font-size: 4rem;
+  font-family: "Poppins";
+}

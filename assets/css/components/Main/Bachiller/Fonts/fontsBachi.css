@@ -1,0 +1,34 @@
+.main-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  .nes {
+    background-color: var(--amarillo-fuerte);
+    border-radius: 30px;
+    padding: 7px 10px;
+    font-weight: bold;
+  }
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--blanco);
+}
+
+/* Texto dentro de las tarjetas */
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: "Inter";
+}
+
+/* Enlace dentro de las tarjetas */
+.card-link {
+  font-size: 0.9rem;
+  font-family: "Inter";
+  color: var(--blanco);
+  font-weight: bold;
+  text-decoration: underline;
+}

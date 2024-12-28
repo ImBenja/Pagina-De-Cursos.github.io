@@ -1,0 +1,29 @@
+.title-exp {
+  font-size: 2em;
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  .edu {
+    background-color: var(--amarillo-fuerte);
+    border-radius: 30px;
+    padding: 4px 10px;
+    font-weight: bold;
+  }
+}
+.sub-title-exp {
+  font-size: 1.2em;
+}
+
+@media (min-width: 420px) and (max-width: 510px) {
+  .title-exp,
+  .sub-title-exp {
+    text-align: center;
+  }
+
+  .title-name-exp {
+    font-size: 1.8rem;
+  }
+  .parrafo-exp {
+    font-size: 0.8em;
+  }
+}

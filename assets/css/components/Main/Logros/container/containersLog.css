@@ -1,0 +1,33 @@
+.container-logro {
+  margin-top: -6rem;
+  text-align: center;
+}
+
+.container-logro .container-logros-c {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.divider {
+  border-left: 2px solid #ccc; /* Línea vertical */
+  height: 120px; /* Ajusta la altura */
+}
+
+@media (min-width: 420px) and (max-width: 510px) {
+  .container-logro {
+    text-align: center;
+    margin-top: -8rem;
+  }
+  .container-logro .container-logros-c {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+  }
+  .divider {
+    display: none;
+  }
+}

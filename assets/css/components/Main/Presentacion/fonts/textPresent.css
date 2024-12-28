@@ -1,0 +1,46 @@
+.title-info {
+  font-size: 3.3em;
+  line-height: 60px;
+  width: 95%;
+}
+
+.sub-title-info {
+  font-size: 1.6em;
+  font-weight: 500;
+  margin-top: 20px;
+  width: 89%;
+}
+
+.opciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+  .bi-wifi,
+  .bi-book,
+  .bi-diagram-3,
+  .bi-coin {
+    color: var(--violeta);
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+  .parrafo-op {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 510px) {
+  .title-info {
+    font-size: 2.6rem;
+    width: 100%;
+  }
+  .sub-title-info {
+    width: 100%;
+  }
+  .opciones {
+    margin-top: 1.7rem;
+    .parrafo-op {
+      font-size: 1rem;
+    }
+  }
+}

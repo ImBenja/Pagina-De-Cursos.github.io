@@ -1,0 +1,61 @@
+.container-background,
+.container-metodo-pago,
+.imgs-contai,
+.container-card-exp,
+.container-ia {
+  display: flex;
+}
+
+.sub-title-info,
+.sub-title-logro,
+.title-esp,
+.title-esp-name,
+.title-exp,
+.title-bachi,
+.main-title {
+  color: var(--negro);
+  font-family: "Inter";
+}
+
+.parrafo-op,
+.parrafo-log,
+.sub-title-esp,
+.parrafo-esp,
+.sub-title-exp,
+.parrafo-exp,
+.parrafo-back,
+.parrafo-ia,
+.parrafo-test {
+  color: var(--gris-mas-oscuro);
+  font-family: "Inter";
+}
+
+.title-info,
+.title-name,
+.title-pago,
+.title-name-exp,
+.title-ia,
+.card-title,
+.title-test {
+  color: #1a1d2e;
+  font-family: "Poppins";
+}
+
+.text-esp,
+.text-exp,
+.list-proyect {
+  padding: 20px;
+}
+
+.img-whatsapp {
+  border-radius: 50%;
+  position: fixed;
+  top: 90%;
+  left: 1.5%;
+  cursor: pointer;
+  height: 50px;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,62 @@
+/*ESTILOS BASE*/
+@import url(Base/Global/global.css);
+@import url(Base/Variables/variables.css);
+@import url(Layout/layout.css);
+
+/*MAIN Y HEADER Y FOOTER*/
+@import url(components/Header/header.css);
+@import url(components/Main/main.css);
+@import url(components/Footer/footer.css);
+
+/*<--------HEADER-------->*/
+
+/*<--------CURSOS-------->*/
+/*<--------CONTAINER-------->*/
+@import url(components/Header/CursoYEspecializaciones/Container/containersCur.css);
+/*<--------FONTS-------->*/
+@import url(components/Header/CursoYEspecializaciones/Fonts/fontsCur.css);
+
+/*<--------MAIN-------->*/
+/*<--------ESPECIALIZACIONES-------->*/
+@import url(components/Main/Especializaciones/container/containers-esp.css);
+@import url(components/Main/Especializaciones/cards/cards-esp.css);
+@import url(components/Main/Especializaciones/buttons/btnsEsp.css);
+@import url(components/Main/Especializaciones/fonts/textEsp.css);
+
+/*<--------EXPLICAIONES-------->*/
+@import url(components/Main/Explicaciones/cards/card-exp.css);
+@import url(components/Main/Explicaciones/container/containers-exp.css);
+@import url(components/Main/Explicaciones/fonts/fontExp.css);
+
+/*<-------PRESENTACION--------->*/
+@import url(components/Main/Presentacion/fonts/textPresent.css);
+@import url(components/Main/Presentacion/container/containers-pre.css);
+@import url(components/Main/Presentacion/buttons/btnsPre.css);
+
+/*<------LOGROS------->*/
+@import url(components/Main/Logros/container/containersLog.css);
+@import url(components/Main/Logros/fonts/fontsLog.css);
+
+/*<------PAGOS------->*/
+@import url(components/Main/Pagos/container/containersPago.css);
+@import url(components/Main/Pagos/fonts/fontsPago.css);
+
+/*<------IA------->*/
+@import url(components/Main/IA/Container/containersIA.css);
+@import url(components/Main/IA/Fonts/fontsIA.css);
+
+/*<------BACHILLER------->*/
+@import url(components/Main/Bachiller/container/containersBachi.css);
+@import url(components/Main/Bachiller/Cards/cardsBachi.css);
+@import url(components/Main/Bachiller/Fonts/fontsBachi.css);
+
+/*<------TESTIMONIOS------->*/
+@import url(components/Main/Testimonios/container/containersTesti.css);
+@import url(components/Main/Testimonios/cards/cardsTesti.css);
+@import url(components/Main/Testimonios/Perfil/perfilesTesti.css);
+@import url(components/Main/Testimonios/Fonts/fontsTesti.css);
+
+/*<------ACORDEON---------->*/
+@import url(components/Main/Acordion/Container/containersAcor.css);
+@import url(components/Main/Acordion/Card/PanelAcor.css);
+@import url(components/Main/Acordion/Fonts/fontsAcor.css);

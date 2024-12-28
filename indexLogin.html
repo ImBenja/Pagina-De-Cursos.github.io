@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .products-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 200px;
+        text-align: center;
+      }
+
+      .product img {
+        width: 100%;
+        height: auto;
+      }
+
+      .cart-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .cart-icon {
+        font-size: 24px;
+        position: relative;
+      }
+
+      .cart-details {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        background-color: white;
+        border: 1px solid #ccc;
+        width: 250px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 5;
+      }
+
+      .cart-container:hover .cart-details {
+        display: block;
+      }
+
+      .cart-items {
+        max-height: 150px;
+        overflow-y: auto;
+      }
+
+      .cart-items li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .cart-items img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      .cart-total {
+        margin-top: 10px;
+      }
+
+      .go-to-cart {
+        margin-top: 10px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+      }
+
+      .go-to-cart:hover {
+        background-color: #0056b3;
+      }
+
+      .contador {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 5px;
+        background-color: rgb(227, 227, 227);
+        color: black;
+        font-size: 1.3rem;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="products-container">
+      <!-- Productos disponibles -->
+      <div class="product" data-id="1">
+        <img
+          src="assets/img/cursos/Ciberseguridad/Ruby.png"
+          alt="GoodNotes, de cero a experto"
+        />
+        <h3>GoodNotes, de cero a experto</h3>
+        <p>Autor: Diana Padilla</p>
+        <p>Precio: 44.99 US$</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <div class="product" data-id="2">
+        <img
+          src="assets/img/cursos/Programacion/HTML.png"
+          alt="Minitrabajos Online: Guía paso a paso para el éxito"
+        />
+        <h3>Minitrabajos Online: Guía paso a paso para el éxito</h3>
+        <p>Autor: Tutoriales NeoBux</p>
+        <p>Precio: 44.99 US$</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+    </div>
+
+    <div class="cart-container">
+      <!-- Ícono del carrito -->
+      <div class="cart-icon">🛒</div>
+      <span id="contador" class="contador"></span>
+
+      <!-- Detalles del carrito -->
+      <div class="cart-details">
+        <ul class="cart-items">
+          <!-- Aquí se agregarán dinámicamente los productos -->
+        </ul>
+        <div class="cart-total">
+          <p>Total: <span class="total-price">0,00 US$</span></p>
+        </div>
+        <a href="cart.html">
+          <button class="go-to-cart">Ir a la cesta</button>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const contador = document.getElementById("contador");
+      const productos = [
+        {
+          id: 1,
+          nombre: "GoodNotes, de cero a experto",
+          autor: "Diana Padilla",
+          precio: 44.99,
+          imagen: "assets/img/cursos/Ciberseguridad/Ruby.png",
+        },
+        {
+          id: 2,
+          nombre: "Minitrabajos Online: Guía paso a paso para el éxito",
+          autor: "Tutoriales NeoBux",
+          precio: 44.99,
+          imagen: "assets/img/cursos/Programacion/HTML.png",
+        },
+      ];
+
+      // Elementos del carrito
+      const cartItemsContainer = document.querySelector(".cart-items");
+      const totalPriceElement = document.querySelector(".total-price");
+
+      // Array para almacenar los productos agregados al carrito
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+      // Función para agregar un producto al carrito
+      function agregarAlCarrito(idProducto) {
+        const producto = productos.find((prod) => prod.id === idProducto);
+        if (producto) {
+          carrito.push(producto);
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+          actualizarCarrito();
+        }
+        // Actualizar el contador
+        updateCounter();
+      }
+
+      function updateCounter() {
+        // Calcular la cantidad total de productos en el carrito
+        const totalItems = carrito.length; // Contamos cuántos productos hay en el carrito
+        contador.textContent = totalItems;
+      }
+
+      // Función para actualizar el contenido del carrito
+      function actualizarCarrito() {
+        // Limpiar el contenido del carrito
+        cartItemsContainer.innerHTML = "";
+
+        // Calcular el total
+        let total = 0;
+
+        // Añadir cada producto al carrito
+        carrito.forEach((producto) => {
+          total += producto.precio;
+
+          const li = document.createElement("li");
+          li.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}">
+      <div>
+        <p>${producto.nombre}</p>
+        <p>${producto.autor}</p>
+        <p>${producto.precio.toFixed(2)} US$</p>
+      </div>
+    `;
+          cartItemsContainer.appendChild(li);
+        });
+
+        // Actualizar el precio total
+        totalPriceElement.textContent = `${total.toFixed(2)} US$`;
+      }
+
+      // Agregar eventos a los botones "Agregar al carrito"
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          const productId = parseInt(
+            this.closest(".product").getAttribute("data-id")
+          );
+          agregarAlCarrito(productId);
+        });
+      });
+
+      // Inicializar la vista del carrito
+      actualizarCarrito();
+      updateCounter();
+    </script>
+  </body>
+</html>

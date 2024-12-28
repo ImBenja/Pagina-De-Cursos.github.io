@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .products-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+
+    .cart-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    .cart-items-container {
+      margin-top: 20px;
+    }
+
+    .cart-summary {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .cart-items-container .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      background-color: blueviolet;
+    }
+
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .cart-item button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .cart-item .save-for-later {
+      background: yellow;
+    }
+
+    .cart-item .save-for-later,
+    .cart-item button {
+      margin-left: 10px;
+    }
+
+    .total-price {
+      font-size: 18px;
+    }
+
+    .pay-now {
+      padding: 10px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+  <body>
+    <h1>Carrito de Compras</h1>
+    <div class="cart-items-container">
+      <!-- Aquí se agregarán los productos del carrito dinámicamente -->
+    </div>
+
+    <div class="cart-summary">
+      <p>Total: <span class="total-price">0,00 US$</span></p>
+      <button class="pay-now">Pagar ahora</button>
+    </div>
+    <script>
+      // Simulamos el carrito que se almacena en el localStorage (se mantendrá después de recargar la página)
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+      // Elementos del carrito en la página
+      const cartItemsContainer = document.querySelector(
+        ".cart-items-container"
+      );
+      const totalPriceElement = document.querySelector(".total-price");
+
+      // Función para actualizar el carrito en la página
+      function actualizarCarrito() {
+        // Limpiar el carrito actual
+        cartItemsContainer.innerHTML = "";
+
+        // Calcular el total
+        let total = 0;
+
+        // Mostrar los productos en el carrito
+        carrito.forEach((producto, index) => {
+          total += producto.precio;
+
+          const itemElement = document.createElement("div");
+          itemElement.classList.add("cart-item");
+
+          itemElement.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}">
+      <div>
+        <p>${producto.nombre}</p>
+        <p>${producto.precio.toFixed(2)} US$</p>
+      </div>
+      <button class="remove-item" data-index="${index}">Eliminar</button>
+      <button class="save-for-later" data-index="${index}">Guardar para después</button>
+    `;
+
+          cartItemsContainer.appendChild(itemElement);
+        });
+
+        // Actualizar el total
+        totalPriceElement.textContent = `${total.toFixed(2)} US$`;
+      }
+
+      // Función para eliminar un producto del carrito
+      function eliminarProducto(index) {
+        carrito.splice(index, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarCarrito();
+      }
+
+      // Función para guardar un producto para después
+      function guardarParaDespues(index) {
+        const producto = carrito.splice(index, 1)[0];
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        // Aquí podrías implementar una lógica para guardar los productos en otra sección
+        actualizarCarrito();
+      }
+
+      // Agregar eventos de eliminar y guardar para después
+      cartItemsContainer.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-item")) {
+          const index = e.target.dataset.index;
+          eliminarProducto(index);
+        }
+
+        if (e.target.classList.contains("save-for-later")) {
+          const index = e.target.dataset.index;
+          guardarParaDespues(index);
+        }
+      });
+
+      // Inicializar el carrito al cargar la página
+      actualizarCarrito();
+    </script>
+  </body>
+</html>
