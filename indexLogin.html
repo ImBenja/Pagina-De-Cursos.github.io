@@ -9,22 +9,133 @@
         font-family: Arial, sans-serif;
       }
 
-      .products-container {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-      }
+      .course-price {
+        flex: 1;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        height: 700px;
+        .img-curso {
+          width: 100%;
+          height: 200px;
+          border-radius: 8px 8px 0 0;
+        }
+        .text-org {
+          padding: 20px;
+          .price {
+            font-family: "Poppins", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            .original-price {
+              text-decoration: line-through;
+              color: #aaa;
+              font-size: 16px;
+            }
+          }
+          .dicount {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            opacity: 80%;
+          }
+          .btns-cart {
+            display: grid;
+            grid-template-columns: 300px 50px;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            .add-to-cart {
+              background-color: var(--violeta);
+              color: #fff;
+              font-family: "Poppins", sans-serif;
+              font-size: 1rem;
+              font-weight: 600;
+              padding: 10px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: 0.3s;
+              &:hover {
+                background-color: var(--violeta-oscuro);
+                color: #fff;
+              }
+            }
+            .btn-like {
+              background-color: var(--Dark-purple);
+              font-family: "Poppins", sans-serif;
+              font-size: 1rem;
+              font-weight: 600;
+              padding: 10px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: 0.3s;
+              color: white;
+              &:hover {
+                background-color: var(--violeta-oscuro);
+              }
+            }
+            .btn-ahora {
+              background-color: var(--gris-claro);
+              color: #242424;
+              font-family: "Poppins", sans-serif;
+              font-size: 1rem;
+              font-weight: 600;
+              padding: 10px;
+              border: 1px solid var(--gris-mas-oscuro);
+              border-radius: 5px;
+              cursor: pointer;
+              transition: 0.3s;
+              grid-column: 1/3;
+              &:hover {
+                background-color: var(--gris-mas-oscuro);
+                color: #fff;
+              }
+            }
+          }
+          .guarantee {
+            font-family: "Poppins", sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+            opacity: 80%;
+            text-align: center;
+            margin-top: 1rem;
+          }
 
-      .product {
-        border: 1px solid #ccc;
-        padding: 10px;
-        width: 200px;
-        text-align: center;
-      }
-
-      .product img {
-        width: 100%;
-        height: auto;
+          .cur-list-inclu {
+            margin-top: 1.2rem;
+            .title-inclu {
+              color: #242424;
+              font-size: 1.2rem;
+              font-family: "Poppins", sans-serif;
+            }
+            .list-inclu {
+              margin-top: 1rem;
+              list-style: none;
+              display: flex;
+              flex-direction: column;
+              gap: 0.8rem;
+              li {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                color: #333;
+                font-family: "Inter", sans-serif;
+                .bi-file-earmark,
+                .bi-journal-bookmark,
+                .bi-phone,
+                .bi-trophy {
+                  font-size: 1.2rem;
+                }
+                span {
+                  font-size: 0.9rem;
+                }
+              }
+            }
+          }
+        }
       }
 
       .cart-container {
@@ -48,7 +159,7 @@
         background-color: white;
         border: 1px solid #ccc;
         width: 250px;
-        padding: 10px;
+        padding: 30px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         z-index: 5;
       }
@@ -103,33 +214,56 @@
         font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
         font-size: 0.8rem;
       }
+
+      .red {
+        color: red;
+      }
     </style>
   </head>
   <body>
-    <div class="products-container">
-      <!-- Productos disponibles -->
-      <div class="product" data-id="1">
-        <img
-          src="assets/img/cursos/Ciberseguridad/Ruby.png"
-          alt="GoodNotes, de cero a experto"
-        />
-        <h3>GoodNotes, de cero a experto</h3>
-        <p>Autor: Diana Padilla</p>
-        <p>Precio: 44.99 US$</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </div>
-
-      <div class="product" data-id="2">
-        <img
-          src="assets/img/cursos/Programacion/HTML.png"
-          alt="Minitrabajos Online: Guía paso a paso para el éxito"
-        />
-        <h3>Minitrabajos Online: Guía paso a paso para el éxito</h3>
-        <p>Autor: Tutoriales NeoBux</p>
-        <p>Precio: 44.99 US$</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </div>
-    </div>
+    <aside class="course-price" data-id="1">
+      <img
+        src="img/cursos/Programacion/HTML.png"
+        alt="HTML5"
+        class="img-curso"
+      />
+      <article class="text-org">
+        <div class="price">
+          <span class="current-price">$50.000</span>
+          <span class="original-price">$80.000</span>
+        </div>
+        <p class="dicount">50% de Descuento</p>
+        <div class="btns-cart">
+          <button class="add-to-cart">Agregar al Carrito</button>
+          <button class="btn-like like">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <button class="btn-ahora comprar">Comprar Ahora</button>
+        </div>
+        <p class="guarantee">Garantía de reembolso de 30 días</p>
+        <article class="cur-list-inclu">
+          <h3 class="title-inclu">Este Curso incluye:</h3>
+          <ul class="list-inclu">
+            <li>
+              <i class="bi bi-file-earmark"></i>
+              <span>1 articulo</span>
+            </li>
+            <li>
+              <i class="bi bi-journal-bookmark"></i>
+              <span>1 modulo descargable</span>
+            </li>
+            <li>
+              <i class="bi bi-phone"></i>
+              <span>Acceso en cualquier dispositivo</span>
+            </li>
+            <li>
+              <i class="bi bi-trophy"></i>
+              <span>Certificado de finalizacion</span>
+            </li>
+          </ul>
+        </article>
+      </article>
+    </aside>
 
     <div class="cart-container">
       <!-- Ícono del carrito -->
@@ -155,17 +289,10 @@
       const productos = [
         {
           id: 1,
-          nombre: "GoodNotes, de cero a experto",
+          nombre: "<span class='red'>GoodNotes, de cero a experto</span>",
           autor: "Diana Padilla",
-          precio: 44.99,
-          imagen: "assets/img/cursos/Ciberseguridad/Ruby.png",
-        },
-        {
-          id: 2,
-          nombre: "Minitrabajos Online: Guía paso a paso para el éxito",
-          autor: "Tutoriales NeoBux",
-          precio: 44.99,
-          imagen: "assets/img/cursos/Programacion/HTML.png",
+          precio: 50000,
+          imagen: "<span class='blue'>img/cursos/Programacion/HTML.png</span>",
         },
       ];
 
@@ -212,7 +339,7 @@
       <div>
         <p>${producto.nombre}</p>
         <p>${producto.autor}</p>
-        <p>${producto.precio.toFixed(2)} US$</p>
+        <p>${producto.precio.toFixed(0)} US$</p>
       </div>
     `;
           cartItemsContainer.appendChild(li);
@@ -226,7 +353,7 @@
       document.querySelectorAll(".add-to-cart").forEach((button) => {
         button.addEventListener("click", function () {
           const productId = parseInt(
-            this.closest(".product").getAttribute("data-id")
+            this.closest(".course-price").getAttribute("data-id")
           );
           agregarAlCarrito(productId);
         });

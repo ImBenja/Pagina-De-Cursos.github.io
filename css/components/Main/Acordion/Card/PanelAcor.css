@@ -1,0 +1,30 @@
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  width: 90%;
+}
+
+.panel p {
+  color: #444;
+  opacity: 80%;
+  line-height: 1.5;
+  font-size: 15px;
+  margin-top: 1rem;
+  font-family: "Inter";
+}
+
+.custom-hr {
+  border: 0;
+  height: 1px;
+  width: 94%;
+  background-color: #575757e4;
+  margin: 20px 0;
+  opacity: 30%;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .panel p {
+    font-size: 1rem;
+  }
+}

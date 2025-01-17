@@ -1,0 +1,20 @@
+.promos-card {
+  width: 290px;
+  height: 294px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+}
+
+.promos-card .img-promo {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 10px 10px;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .promos-card {
+    width: 400px;
+  }
+}

@@ -1,0 +1,54 @@
+.title {
+  font-weight: bold;
+  color: var(--Dark-purple);
+  font-size: 2.5rem;
+  font-family: "Poppins";
+}
+
+.accordion {
+  color: var(--Dark-purple);
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  font-size: 1.1rem;
+  margin-top: 2.5rem;
+  font-family: "Poppins";
+}
+.active,
+.accordion:hover {
+  color: rgb(172, 34, 241);
+}
+
+.accordion::after {
+  content: url("assets/img/icon-plus.svg");
+  float: right;
+}
+
+.active::after {
+  content: url("assets/img/icon-minus.svg");
+}
+
+.icon {
+  position: absolute;
+  right: 10%;
+  margin-top: 1.3rem;
+}
+
+.icon.minus {
+  display: none;
+}
+
+.accordion-container.active .icon.plus {
+  display: none;
+}
+
+.accordion-container.active .icon.minus {
+  display: block;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .accordion {
+    font-size: 1rem;
+    width: 90%;
+  }
+}

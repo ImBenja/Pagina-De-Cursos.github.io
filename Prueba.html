@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Juego con Enemigos</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      #gameArea {
+        width: 400px;
+        height: 400px;
+        background-color: #ddd;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #333;
+      }
+      #player {
+        width: 40px;
+        height: 40px;
+        background-color: #007bff;
+        position: absolute;
+        top: 180px;
+        left: 180px;
+        border-radius: 5px;
+      }
+      .bullet {
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .enemy {
+        width: 40px;
+        height: 40px;
+        background-color: #ff5733;
+        position: absolute;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gameArea">
+      <div id="player"></div>
+    </div>
+
+    <script>
+      const player = document.getElementById("player");
+      const gameArea = document.getElementById("gameArea");
+
+      let position = { top: 180, left: 180 };
+      const step = 20; // Tamaño del paso al mover
+      const enemies = []; // Array para guardar enemigos
+
+      document.addEventListener("keydown", (event) => {
+        const key = event.key.toLowerCase();
+
+        if (key === "w" && position.top > 0) {
+          position.top -= step; // Arriba
+        } else if (
+          key === "s" &&
+          position.top < gameArea.offsetHeight - player.offsetHeight
+        ) {
+          position.top += step; // Abajo
+        } else if (key === "a" && position.left > 0) {
+          position.left -= step; // Izquierda
+        } else if (
+          key === "d" &&
+          position.left < gameArea.offsetWidth - player.offsetWidth
+        ) {
+          position.left += step; // Derecha
+        } else if (key === " ") {
+          shootBullet(); // Disparar
+        }
+
+        player.style.top = `${position.top}px`;
+        player.style.left = `${position.left}px`;
+      });
+
+      // Función para disparar un proyectil
+      function shootBullet() {
+        const bullet = document.createElement("div");
+        bullet.classList.add("bullet");
+
+        bullet.style.top = `${position.top}px`;
+        bullet.style.left = `${position.left + player.offsetWidth / 2 - 5}px`;
+
+        gameArea.appendChild(bullet);
+
+        const bulletInterval = setInterval(() => {
+          const bulletTop = parseInt(bullet.style.top);
+          if (bulletTop <= 0) {
+            bullet.remove();
+            clearInterval(bulletInterval);
+          } else {
+            bullet.style.top = `${bulletTop - 10}px`;
+            checkBulletCollision(bullet, bulletInterval);
+          }
+        }, 30);
+      }
+
+      // Crear enemigos en posiciones aleatorias
+      function createEnemy() {
+        const enemy = document.createElement("div");
+        enemy.classList.add("enemy");
+
+        const randomX = Math.floor(Math.random() * (gameArea.offsetWidth - 40));
+        enemy.style.top = "0px";
+        enemy.style.left = `${randomX}px`;
+
+        gameArea.appendChild(enemy);
+        enemies.push(enemy);
+
+        const enemyInterval = setInterval(() => {
+          const enemyTop = parseInt(enemy.style.top);
+
+          if (enemyTop >= gameArea.offsetHeight) {
+            alert("¡Perdiste! Un enemigo llegó al fondo.");
+            clearInterval(enemyInterval);
+            location.reload(); // Reinicia el juego
+          } else {
+            enemy.style.top = `${enemyTop + 5}px`;
+          }
+        }, 50);
+      }
+
+      // Verificar colisiones entre balas y enemigos
+      function checkBulletCollision(bullet, bulletInterval) {
+        enemies.forEach((enemy, index) => {
+          const bulletRect = bullet.getBoundingClientRect();
+          const enemyRect = enemy.getBoundingClientRect();
+
+          if (
+            bulletRect.top <= enemyRect.bottom &&
+            bulletRect.bottom >= enemyRect.top &&
+            bulletRect.left <= enemyRect.right &&
+            bulletRect.right >= enemyRect.left
+          ) {
+            // Colisión detectada
+            enemy.remove();
+            bullet.remove();
+            enemies.splice(index, 1);
+            clearInterval(bulletInterval);
+          }
+        });
+      }
+
+      // Generar enemigos cada 2 segundos
+      setInterval(createEnemy, 2000);
+    </script>
+  </body>
+</html>

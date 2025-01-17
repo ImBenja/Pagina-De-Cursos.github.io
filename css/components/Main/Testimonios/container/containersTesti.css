@@ -1,0 +1,28 @@
+.container-testimonios {
+  text-align: center;
+  padding: 20px;
+  margin-top: 2rem;
+}
+
+.sep-test {
+  width: 1315px;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 320px 305px auto;
+  column-gap: 30px;
+  row-gap: 25px;
+  text-align: left;
+  font-family: "Barlow Semi Condensed";
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .container-testimonios {
+    text-align: left;
+  }
+  .sep-test {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

@@ -1,0 +1,75 @@
+.container-card-esp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.especializaciones-card {
+  margin-top: 1.5rem;
+  max-width: 393px;
+  height: 450px;
+  perspective: 1000px; /* Agrega profundidad al efecto 3D */
+}
+
+.text-contai {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.container-links {
+  background-color: hsl(217, 19%, 35%);
+  position: absolute;
+  top: -70%;
+  right: 0;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.5em;
+  width: 210px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 9px;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid hsl(217, 19%, 35%);
+  }
+}
+
+.container-links.activeList {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btns-back {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blanco);
+  max-height: 50px;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .container-card-esp {
+    grid-template-columns: 1fr;
+  }
+
+  .text-contai {
+    justify-content: flex-start;
+  }
+}

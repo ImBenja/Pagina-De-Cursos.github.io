@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  background: var(--violeta);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blanco);
+  border-radius: 10px;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  height: 100dvh;
+}
+
+.container-like,
+.container-deslike {
+  border-radius: 20px;
+  padding: 20px;
+  position: fixed;
+  bottom: 10%;
+  left: 30%;
+  width: 50%;
+  text-align: center;
+  opacity: 0; /* Inicia oculto */
+  transform: translateY(20px); /* Comienza ligeramente hacia abajo */
+  transition: opacity 0.5s ease, transform 1.5s ease; /* Transición suave */
+}
+
+.container-like.show,
+.container-deslike.show {
+  opacity: 1; /* Hace visible el contenedor */
+  transform: translateY(0); /* Hace que suba a su posición final */
+}
+
+.container-like {
+  background-color: green;
+}
+
+.container-deslike {
+  background-color: #222222;
+}
+
+.like-text,
+.deslike-text {
+  color: rgb(255, 255, 255);
+  font-family: "Poppins";
+  font-weight: bold;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 2px solid #ffffff;
+  z-index: 1;
+}
+
+header .container-nav {
+  background-color: var(--violeta);
+  padding: 10px 27px 10px 27px;
+}
+header .container-oferta {
+  background-color: #222222;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  p {
+    color: white;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    margin-right: 10px;
+  }
+  .contador {
+    background-color: var(--azul-dark);
+    width: 15%;
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1500px; /* Ajusta el max-width según el diseño */
+}
+
+main .container-background {
+  background-color: #f1f1f1;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  border-radius: 30px;
+  padding: 4rem;
+}
+
+footer {
+  background-color: #222222;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 400px) and (max-width: 768px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .mensaje-carga {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 200px;
+      left: 30%;
+    }
+    p {
+      font-size: 1.2rem;
+      left: 15%;
+      top: 40%;
+    }
+  }
+
+  header .container-oferta {
+    flex-direction: column;
+    p {
+      font-size: 0.9rem;
+    }
+    .contador {
+      width: 40%;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+  }
+
+  main {
+    overflow: hidden;
+  }
+  main .container-background {
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,253 @@
+.container-mail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 100%;
+
+  .title-mail {
+    color: var(--blanco);
+    font-family: "Poppins";
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+
+    input {
+      background-color: var(--blanco);
+      border: 1px solid grey;
+      width: 50%;
+      border-radius: 5px;
+      height: 40px;
+      padding: 10px;
+    }
+
+    button {
+      background-color: var(--amarillo-fuerte);
+      border-radius: 10px;
+      border: none;
+      padding: 10px;
+      color: var(--negro);
+      font-size: 1rem;
+      font-family: "Inter";
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        opacity: 70%;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.custom-hr-foot {
+  background-color: #cacacae4;
+  margin-top: 2rem;
+  opacity: 80%;
+  height: 1px;
+}
+
+.container-info-foot {
+  margin-top: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  color: #fff;
+}
+
+.img-afip {
+  height: 100px;
+  width: 80px;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+    opacity: 70%;
+  }
+}
+.img-sll {
+  height: 40px;
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+/* Cada columna del footer */
+.footer-column {
+  flex: 1;
+  max-width: 300px;
+}
+.footer-column.dos,
+.footer-column.tres,
+.footer-column.cuatro {
+  ul {
+    list-style: none;
+    a {
+      color: var(--gris-claro);
+      &:hover {
+        color: var(--amarillo-fuerte);
+      }
+    }
+  }
+}
+
+.footer-column.tres {
+  .title-cur-foot {
+    color: var(--violeta-claro);
+    font-size: 0.9rem;
+    font-family: "Inter";
+    .ciberseguridad {
+      background-color: var(--amarillo-fuerte);
+      color: black;
+      border-radius: 5px;
+    }
+  }
+  .sep-li {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 150px 150px;
+  }
+}
+
+.title-foot {
+  font-size: 1.2rem;
+  color: var(--blanco-rosado);
+  font-family: "Poppins";
+}
+
+/* Imagen del logo */
+.img-logo-foot {
+  height: 150px;
+}
+
+/* Contenedor de texto */
+.text-contai-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+/* Elementos individuales dentro del contenedor */
+.sep-ubi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Estilo de los iconos */
+.bi-envelope-arrow-up-fill,
+.bi-geo-alt-fill,
+.bi-telephone-fill {
+  background-color: var(--amarillo-fuerte); /* Amarillo fuerte */
+  font-size: 0.9rem;
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--negro);
+}
+
+/* Estilo de los enlaces */
+footer a {
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Suaviza los cambios de estilo */
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container-derechos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  .text-derecho {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Suaviza los cambios de estilo */
+  }
+}
+
+.links-redes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.redes {
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.bi-facebook,
+.bi-youtube,
+.bi-instagram,
+.bi-twitter-x {
+  font-size: 1.4rem;
+}
+
+.redes.facebook {
+  background-color: blue;
+}
+.redes.youtube {
+  background-color: red;
+}
+.redes.instagram {
+  background-image: radial-gradient(
+    circle at 33% 100%,
+    #fed373 4%,
+    #f15245 30%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+}
+.redes.x {
+  background-color: black;
+}
+
+@media (min-width: 400px) and (max-width: 768px) {
+  .container-mail {
+    form {
+      width: 100%;
+    }
+  }
+  .container-info-foot {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .container-derechos {
+    flex-direction: column-reverse;
+    justify-content: left;
+    gap: 30px;
+  }
+
+  .img-sll {
+    margin: 2rem auto;
+  }
+}

@@ -1,0 +1,23 @@
+.title-promo {
+  font-size: 2rem;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  background-color: var(--violeta);
+  color: var(--blanco);
+  border-radius: 10px;
+}
+
+.text-promo {
+  padding: 1rem;
+  .title-name-promo {
+    font-size: 1.5rem;
+    font-family: "Poppins";
+    color: var(--Very-dark-blackish-blue);
+  }
+  .parrafo-promo {
+    font-size: 0.9rem;
+    font-family: "Inter";
+    opacity: 80%;
+    font-weight: 600;
+  }
+}

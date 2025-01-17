@@ -1,0 +1,69 @@
+.btn-esp {
+  background-color: #f3f3f3;
+  border: 1px solid gray;
+  text-decoration: none;
+  width: 85%;
+  height: 50px;
+  border-radius: 5px;
+  color: var(--violeta-fuerte);
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 500;
+  margin-top: 1.4rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: var(--amarillo-fuerte);
+    border: none;
+  }
+}
+
+.btn-social {
+  margin-top: 1.3rem;
+  width: 60px;
+  height: 50px;
+  background-color: var(--Very-dark-blackish-blue);
+  border: none;
+  cursor: pointer;
+  border-radius: 10%;
+}
+
+.btn-social.like,
+.btn-social.share {
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  .bi-heart-fill,
+  .bi-share-fill {
+    font-size: 1.2rem;
+    color: #ffffff; /* Color del corazón */
+  }
+}
+
+.btn-social.like.activated .bi-heart-fill {
+  color: #e63946; /* Color más intenso al activarse */
+}
+.btn-social.like .like-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #ff6b6b;
+  animation: pop 0.5s ease forwards;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
