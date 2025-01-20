@@ -554,6 +554,58 @@
   }
 }
 
+.container-valoracion {
+  margin-top: 2.3rem;
+  .container-valoraciones {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 30%;
+    .perfil-valoracion {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      .icon-perfil {
+        background-color: #232323;
+        padding: 0.6rem;
+        border-radius: 50%;
+
+        .nombre-person {
+          color: var(--blanco);
+          font-family: "Inter", sans-serif;
+          font-size: 1.5rem;
+        }
+      }
+      .nombre-veri {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        .nombre-usuario {
+          font-family: "Poppins";
+          color: var(--negro);
+          font-weight: 600;
+        }
+        .sep-valoracion-usuario {
+          display: flex;
+          gap: 0.2rem;
+          .bi-star-fill {
+            color: rgb(255, 140, 0);
+            font-size: 0.9rem;
+          }
+          .tiempo-respuesta {
+            color: var(--negro);
+            opacity: 80%;
+            font-family: "Inter";
+            font-weight: 600;
+            font-size: 0.7rem;
+            margin-left: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 .btn-like.like.activated .bi-heart-fill {
   color: #e63946; /* Color más intenso al activarse */
 }

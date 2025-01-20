@@ -8,7 +8,6 @@ import { setupModal } from "./modules/modal.js";
 import { setupCuponHandler } from "./modules/cuponHandler.js";
 import { inputHandler } from "./modules/inputHandler.js";
 import { descriptionCurso } from "./modules/descriptionHandler.js";
-import { cartCursos } from "./modules/cartHandler.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   handleLikeButtons();
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCuponHandler();
   inputHandler();
   descriptionCurso();
-  cartCursos();
 });
 
 /*<---------------------------------------------------------- CARRITOO PARA LA PAG PRINCIPAL ----------------------------------------------->/* */
@@ -35,7 +33,7 @@ const productos = [
     autor: "Curso: Programacion",
     precio: 50000,
     imagen: "img/cursos/Programacion/HTML.png",
-    link: "<a href='../pages/indexHTML.html'>Ver curso</a>",
+    link: "<a class='link' href='indexHTML.html'>Ver curso</a>",
   },
   {
     id: 2,
@@ -43,7 +41,7 @@ const productos = [
     autor: "Curso: Programacion",
     precio: 50000,
     imagen: "img/cursos/Programacion/CSS.png",
-    link: "<a  href='../pages/indexCSS.html'>Ver curso</a>",
+    link: "<a class='link' href='indexCSS.html'>Ver curso</a>",
   },
 ];
 
@@ -82,7 +80,7 @@ function actualizarCarrito() {
   if (carrito.length === 0) {
     cartItemsContainer.innerHTML =
       "<p class='text-cart-vacio'>El carrito está vacío</p>";
-    totalPriceElement.textContent = "0,00 $";
+    totalPriceElement.textContent = "0.00 $";
     return;
   }
 
