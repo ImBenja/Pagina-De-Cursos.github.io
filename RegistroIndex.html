@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <style>
+      .cart-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .cart-icon {
+        font-size: 24px;
+        position: relative;
+      }
+
+      .cart-details {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        background-color: white;
+        border: 1px solid #ccc;
+        width: 250px;
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 5;
+      }
+
+      .cart-container:hover .cart-details {
+        display: block;
+      }
+
+      .cart-items {
+        max-height: 150px;
+        overflow-y: auto;
+      }
+
+      .cart-items li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .cart-items img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      .cart-total {
+        margin-top: 10px;
+      }
+
+      .go-to-cart {
+        margin-top: 10px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+      }
+
+      .go-to-cart:hover {
+        background-color: #0056b3;
+      }
+
+      .contador {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 5px;
+        background-color: rgb(227, 227, 227);
+        color: black;
+        font-size: 1.3rem;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 0.8rem;
+      }
+
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bienvenido</h1>
+
+    <h2>Registro</h2>
+    <form action="registro.php" method="POST">
+      <label for="nombre_usuario">Nombre de usuario:</label>
+      <input type="text" id="nombre_usuario" name="nombre_usuario" required />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required />
+
+      <button type="submit">Registrarse</button>
+    </form>
+
+    <h2>Inicio de Sesión</h2>
+    <form action="login.php" method="POST">
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required />
+
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+
+    <a href="indexLogin.html">holaa</a>
+
+    <div class="cart-container">
+      <!-- Ícono del carrito -->
+      <div class="cart-icon">🛒</div>
+      <span id="contador" class="contador"></span>
+
+      <!-- Detalles del carrito -->
+      <div class="cart-details">
+        <ul class="cart-items">
+          <!-- Aquí se agregarán dinámicamente los productos -->
+        </ul>
+        <div class="cart-total">
+          <p>Total: <span class="total-price">0,00 US$</span></p>
+        </div>
+        <a href="cart.html">
+          <button class="go-to-cart">Ir a la cesta</button>
+        </a>
+      </div>
+    </div>
+
+    <script src="js/carritoPrin.js"></script>
+  </body>
+</html>

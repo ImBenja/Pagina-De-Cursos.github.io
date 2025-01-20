@@ -1,49 +1,21 @@
-import { handleLikeButtons } from "./modules/likeHandler.js";
-import { initializeCountdown } from "./modules/countdown.js";
-import { handleShareButtons } from "./modules/shareHandler.js";
-import { setupAccordion } from "./modules/accordion.js";
-import { setupAccordionTemario } from "./modules/acordionTemario.js";
-import { setupSidebar } from "./modules/sidebar.js";
-import { setupModal } from "./modules/modal.js";
-import { setupCuponHandler } from "./modules/cuponHandler.js";
-import { inputHandler } from "./modules/inputHandler.js";
-import { descriptionCurso } from "./modules/descriptionHandler.js";
-import { cartCursos } from "./modules/cartHandler.js";
+/*<----------------------------------------------------------CARRITOO----------------------------------------------->/* */
 
-document.addEventListener("DOMContentLoaded", () => {
-  handleLikeButtons();
-  initializeCountdown();
-  handleShareButtons();
-  setupAccordion();
-  setupAccordionTemario();
-  setupSidebar();
-  setupModal();
-  setupCuponHandler();
-  inputHandler();
-  descriptionCurso();
-  cartCursos();
-});
-
-/*<---------------------------------------------------------- CARRITOO PARA LA PAG PRINCIPAL ----------------------------------------------->/* */
 const contador = document.getElementById("contador");
-const contadorMobile = document.getElementById("contador-mobi");
 
 const productos = [
   {
     id: 1,
     nombre: "Curso de HTML",
-    autor: "Curso: Programacion",
+    autor: "Curso de Programacion",
     precio: 50000,
     imagen: "img/cursos/Programacion/HTML.png",
-    link: "<a href='../pages/indexHTML.html'>Ver curso</a>",
   },
   {
     id: 2,
     nombre: "Curso de CSS",
-    autor: "Curso: Programacion",
+    autor: "Curso de Programacion",
     precio: 50000,
     imagen: "img/cursos/Programacion/CSS.png",
-    link: "<a  href='../pages/indexCSS.html'>Ver curso</a>",
   },
 ];
 
@@ -70,7 +42,6 @@ function updateCounter() {
   // Calcular la cantidad total de productos en el carrito
   const totalItems = carrito.length; // Contamos cuántos productos hay en el carrito
   contador.textContent = totalItems;
-  contadorMobile.textContent = totalItems;
 }
 
 // Función para actualizar el contenido del carrito
@@ -80,8 +51,7 @@ function actualizarCarrito() {
   cartItemsContainer.innerHTML = "";
 
   if (carrito.length === 0) {
-    cartItemsContainer.innerHTML =
-      "<p class='text-cart-vacio'>El carrito está vacío</p>";
+    cartItemsContainer.innerHTML = "<p>El carrito está vacío</p>";
     totalPriceElement.textContent = "0,00 $";
     return;
   }
@@ -97,10 +67,9 @@ function actualizarCarrito() {
     li.innerHTML = `
 <img src="${producto.imagen}" alt="${producto.nombre}">
 <div>
-<p>${producto.nombre}</p>
-<p>${producto.autor}</p>
-<p>${producto.precio.toLocaleString("es-AR")} $</p>
-<p>${producto.link}</p>
+  <p>${producto.nombre}</p>
+  <p>${producto.autor}</p>
+  <p>${producto.precio.toLocaleString("es-AR")} $</p>
 </div>
 `;
     cartItemsContainer.appendChild(li);

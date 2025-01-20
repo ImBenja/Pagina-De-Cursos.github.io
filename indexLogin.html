@@ -7,6 +7,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
+        overflow: auto;
       }
 
       .course-price {
@@ -14,7 +15,6 @@
         background: #fff;
         border: 1px solid #ddd;
         border-radius: 8px;
-        height: 700px;
         .img-curso {
           width: 100%;
           height: 200px;
@@ -158,35 +158,27 @@
         right: 0;
         background-color: white;
         border: 1px solid #ccc;
-        width: 250px;
-        padding: 30px;
+        width: 300px;
+        height: 100px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         z-index: 5;
+        border-radius: 10px;
+        overflow: auto;
       }
 
       .cart-container:hover .cart-details {
         display: block;
       }
 
-      .cart-items {
-        max-height: 150px;
-        overflow-y: auto;
-      }
-
-      .cart-items li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .cart-items img {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-      }
-
       .cart-total {
         margin-top: 10px;
+        padding: 0.5rem;
+        box-shadow: 0px -1px 10px rgb(83, 83, 83);
+        p {
+          font-family: "Poppins";
+          font-weight: 600;
+          color: #333;
+        }
       }
 
       .go-to-cart {
@@ -215,56 +207,67 @@
         font-size: 0.8rem;
       }
 
-      .red {
-        color: red;
+      .cart-items {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .cart-items li {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.2s;
+        position: relative;
+        &::before {
+          content: "";
+          width: 120%;
+          height: 1px;
+          background-color: #666;
+          position: absolute;
+          left: -10%;
+          top: 110%;
+        }
+      }
+
+      .cart-items img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .cart-items div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+
+      .cart-items p {
+        margin: 0;
+        font-size: 13px;
+        color: #333;
+        font-weight: 600;
+        display: flex;
+        .red {
+          color: #0056b3;
+          font-weight: 700;
+          font-family: "Poppins", sans-serif;
+          font-size: 1rem;
+        }
+      }
+
+      .cart-items .product-price {
+        font-size: 12px;
+        color: #666;
+        margin-top: 5px;
       }
     </style>
   </head>
   <body>
-    <aside class="course-price" data-id="1">
-      <img
-        src="img/cursos/Programacion/HTML.png"
-        alt="HTML5"
-        class="img-curso"
-      />
-      <article class="text-org">
-        <div class="price">
-          <span class="current-price">$50.000</span>
-          <span class="original-price">$80.000</span>
-        </div>
-        <p class="dicount">50% de Descuento</p>
-        <div class="btns-cart">
-          <button class="add-to-cart">Agregar al Carrito</button>
-          <button class="btn-like like">
-            <i class="bi bi-heart-fill"></i>
-          </button>
-          <button class="btn-ahora comprar">Comprar Ahora</button>
-        </div>
-        <p class="guarantee">Garantía de reembolso de 30 días</p>
-        <article class="cur-list-inclu">
-          <h3 class="title-inclu">Este Curso incluye:</h3>
-          <ul class="list-inclu">
-            <li>
-              <i class="bi bi-file-earmark"></i>
-              <span>1 articulo</span>
-            </li>
-            <li>
-              <i class="bi bi-journal-bookmark"></i>
-              <span>1 modulo descargable</span>
-            </li>
-            <li>
-              <i class="bi bi-phone"></i>
-              <span>Acceso en cualquier dispositivo</span>
-            </li>
-            <li>
-              <i class="bi bi-trophy"></i>
-              <span>Certificado de finalizacion</span>
-            </li>
-          </ul>
-        </article>
-      </article>
-    </aside>
-
     <div class="cart-container">
       <!-- Ícono del carrito -->
       <div class="cart-icon">🛒</div>
@@ -277,10 +280,10 @@
         </ul>
         <div class="cart-total">
           <p>Total: <span class="total-price">0,00 US$</span></p>
+          <a href="cart.html">
+            <button class="go-to-cart">Ir a la cesta</button>
+          </a>
         </div>
-        <a href="cart.html">
-          <button class="go-to-cart">Ir a la cesta</button>
-        </a>
       </div>
     </div>
 
@@ -289,10 +292,10 @@
       const productos = [
         {
           id: 1,
-          nombre: "<span class='red'>GoodNotes, de cero a experto</span>",
-          autor: "Diana Padilla",
+          nombre: "Curso de HTMl",
+          autor: "Curso de Programacion",
           precio: 50000,
-          imagen: "<span class='blue'>img/cursos/Programacion/HTML.png</span>",
+          imagen: "img/cursos/Programacion/HTML.png",
         },
       ];
 
@@ -339,14 +342,14 @@
       <div>
         <p>${producto.nombre}</p>
         <p>${producto.autor}</p>
-        <p>${producto.precio.toFixed(0)} US$</p>
+        <p>${producto.precio.toLocaleString("es-AR")} US$</p>
       </div>
     `;
           cartItemsContainer.appendChild(li);
         });
 
         // Actualizar el precio total
-        totalPriceElement.textContent = `${total.toFixed(2)} US$`;
+        totalPriceElement.textContent = `${total.toLocaleString("es-AR")} US$`;
       }
 
       // Agregar eventos a los botones "Agregar al carrito"

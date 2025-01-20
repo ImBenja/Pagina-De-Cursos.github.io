@@ -198,7 +198,7 @@ footer a {
 
 .redes {
   border-radius: 5px;
-  padding: 5px;
+  padding: 0.3rem;
   transition: 0.5s;
   &:hover {
     transform: scale(1.1);
@@ -209,6 +209,7 @@ footer a {
 .bi-instagram,
 .bi-twitter-x {
   font-size: 1.4rem;
+  color: var(--blanco);
 }
 
 .redes.facebook {
