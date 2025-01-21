@@ -44,6 +44,7 @@ body {
   opacity: 0; /* Inicia oculto */
   transform: translateY(20px); /* Comienza ligeramente hacia abajo */
   transition: opacity 0.5s ease, transform 1.5s ease; /* Transición suave */
+  z-index: 9999;
 }
 
 .container-like.show,

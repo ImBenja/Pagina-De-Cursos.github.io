@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="icon" type="image/png" href="img/icon/EduLogo.png" />
   </head>
   <style>
     body {
       font-family: Arial, sans-serif;
+    }
+
+    .container-sep {
+      margin-top: 10rem;
     }
 
     .products-container {
@@ -88,14 +98,895 @@
     }
   </style>
   <body>
-    <h1>Carrito de Compras</h1>
-    <div class="cart-items-container">
-      <!-- Aquí se agregarán los productos del carrito dinámicamente -->
-    </div>
+    <!--------------- HEADER SECTION ----------->
+    <header>
+      <!-------------- SECTION DE OFERTA -------------->
+      <section class="container-oferta">
+        <p>
+          🎄<strong>30%</strong> en todas nuestras carreras y cursos hasta el 31
+          de Diciembre. Aplica ahora con el código
+          <strong>EDUCENTROFUT2025</strong>
+        </p>
 
-    <div class="cart-summary">
-      <p>Total: <span class="total-price">0,00 US$</span></p>
-      <button class="pay-now">Pagar ahora</button>
+        <div class="contador" id="contador-oferta">0d : 0h : 0m : 0s</div>
+      </section>
+      <!--FIN DE SECTION DE OFERTA-->
+
+      <!---------------------- SECTION DE NAVEGACION ----------------->
+      <section class="container-nav">
+        <!--NAVEGACION-->
+        <nav class="nav">
+          <img
+            src="img/icon/EduLogo.png"
+            class="img-logo"
+            alt="Logo Educentro"
+          />
+          <!-- BOTON PARA CELULARES -->
+          <div class="navbar">
+            <!-- LISTA DE NAVEGACION -->
+            <ul>
+              <!-- FIN DE BOTON DE CELULARES -->
+              <li>
+                <a href="HTML/HTML-Cursos/Curso-HTML/indexHTML.html"
+                  >Educentro</a
+                >
+              </li>
+              <!------------------ DROPDOWN DE CURSOS ----------------->
+              <li class="menu-list dropdown">
+                <a href="#">Cursos <i class="bi bi-arrow-down-short"></i></a>
+                <div class="dropdown-content">
+                  <!----------------------------------- CONTENEDOR DE CURSOS DE OFIMATICA -------------------------------------------->
+                  <div class="text-contai-cur">
+                    <h3 class="title-cur">Cursos De Ofimática</h3>
+                    <!-- TITULO DE CURSOS -->
+                    <ul class="list-cur">
+                      <!-- LISTA DE CURSOS -->
+                      <!---------- CURSO: WORD -------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/Word.png"
+                          alt="Word"
+                          class="img-cur"
+                        />
+                        <a href="#">Word</a>
+                      </li>
+                      <!----------- CURSO: EXCEL -------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/Exel.png"
+                          alt="Excel"
+                          class="img-cur"
+                        />
+                        <a href="#">Excel</a>
+                      </li>
+                      <!----------- CURSO: ACCESS ------------------>
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/Access.png"
+                          alt="Access"
+                          class="img-cur"
+                        />
+                        <a href="#">Access</a>
+                      </li>
+                      <!------------ CURSO: POWERPOINT -------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/PowerPoint.png"
+                          alt="PowerPoint"
+                          class="img-cur"
+                        />
+                        <a href="#">PowerPoint</a>
+                      </li>
+                      <!------------- CURSO: PROJECT ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/Project.png"
+                          alt="Project"
+                          class="img-cur"
+                        />
+                        <a href="#">Project</a>
+                      </li>
+                      <!------------- CURSO: VISIO --------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/Visio.png"
+                          alt="Visio"
+                          class="img-cur"
+                        />
+                        <a href="#">Visio</a>
+                      </li>
+                      <!------------- CURSO: OUTLOOK ------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/Outook.png"
+                          alt="Outlook"
+                          class="img-cur"
+                        />
+                        <a href="#">Outlook</a>
+                      </li>
+                      <!------------- CURSO: WINDOWS -------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ofimatica/Windows.png"
+                          alt="Windows"
+                          class="img-cur"
+                        />
+                        <a href="#">Windows</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!----------------------------------- CONTENEDOR DE CURSOS DE DISEÑO -------------------------------------------->
+                  <div class="text-contai-cur diseño">
+                    <!-- TITULO DE DISEÑO -->
+                    <h3 class="title-cur">Cursos De Diseño</h3>
+                    <!-- LISTA DE CURSOS DE DISEÑO -->
+                    <ul class="list-cur">
+                      <!----------- CURSO: ADOBE PHOTOSHOP ------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/phtoshop.jpg"
+                          class="img-cur"
+                          alt="Photoshop"
+                        />
+                        <a href="#">A.Photoshop</a>
+                      </li>
+                      <!------------ CURSO: ADOBE ILLUSTRATOR ----------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/A.Ilustrator.jpg"
+                          class="img-cur"
+                          alt="Illustrator"
+                        />
+                        <a href="#">A.Illustrator</a>
+                      </li>
+                      <!------------ CURSO: ADOBE DREAMWEAVER ----------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/A.Dreamweaver.jpg"
+                          class="img-cur"
+                          alt="Dreamweaver"
+                        />
+                        <a href="#">A.Dreamweaver</a>
+                      </li>
+                      <!------------ CURSO: ADOBE FIREWORKS ------------>
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/A.Fireworks.jpg"
+                          class="img-cur"
+                          alt="Fireworks"
+                        />
+                        <a href="#">A.Fireworks</a>
+                      </li>
+                      <!------------- CURSO: ADOBE FLASH ------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/A.Flash.png"
+                          class="img-cur"
+                          alt="Flash"
+                        />
+                        <a href="#">Adobe Flash</a>
+                      </li>
+                      <!-------------- CURSO: 3D STUDIO --------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/3dStudio.png"
+                          class="img-cur"
+                          alt="3D Studio"
+                        />
+                        <a href="#">3D Studio</a>
+                      </li>
+                      <!-------------- CURSO: COREL DRAW -------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/CorelDraw.png"
+                          class="img-cur"
+                          alt="Corel Draw"
+                        />
+                        <a href="#">Corel Draw</a>
+                      </li>
+                      <!-------------- CURSO: AUTOCAD ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/AutoCad.png"
+                          class="img-cur"
+                          alt="AutoCAD"
+                        />
+                        <a href="#">AutoCAD</a>
+                      </li>
+                      <!-------------- CURSO: FOTOGRAFIA DIGITAL ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/FotoDigital.png"
+                          class="img-cur"
+                          alt="Fotografía Digital"
+                        />
+                        <a href="#">Foto.Digital</a>
+                      </li>
+                      <!-------------- CURSO: FUNDAMENTOS DE DISEÑO --------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Diseño/Fund.De.Diseño.png"
+                          class="img-cur"
+                          alt="Fundamentos de Diseño"
+                        />
+                        <a href="#">Fund.Diseño</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!----------------------------------- CONTENEDOR DE CURSOS DE PROGRAMACION -------------------------------------------->
+                  <div class="text-contai-cur programacion">
+                    <!-- TITULO DE PROGRAMACION -->
+                    <h3 class="title-cur">Cursos De Programacion</h3>
+                    <!-- LISTA DE CURSOS DE PROGRAMACION -->
+                    <ul class="list-cur">
+                      <!-------------- CURSO: HTML5 ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/HTML.png"
+                          alt="HTML"
+                          class="img-cur"
+                        />
+                        <a href="indexHTML.html">HTML</a>
+                      </li>
+                      <!-------------- CURSO: CSS3 ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/CSS.png"
+                          alt="CSS"
+                          class="img-cur"
+                        />
+                        <a href="indexCSS.html">CSS</a>
+                      </li>
+                      <!-------------- CURSO: JAVASCRIPT ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/JavaScript.png"
+                          alt="JavaScript"
+                          class="img-cur"
+                        />
+                        <a href="#">JavaScript</a>
+                      </li>
+                      <!-------------- CURSO: PHP ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/PHPyMySQL.png"
+                          alt="PHP"
+                          class="img-cur"
+                        />
+                        <a href="#">PHP</a>
+                      </li>
+                      <!-------------- CURSO: MYSQL  ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/MySQL.jpg"
+                          alt="MySQL"
+                          class="img-cur"
+                        />
+                        <a href="#">MySQL</a>
+                      </li>
+                      <!-------------- CURSO: JAVA ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/Java.png"
+                          alt="Java"
+                          class="img-cur"
+                        />
+                        <a href="#">Java</a>
+                      </li>
+                      <!-------------- CURSO: VISUAL BASIC ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/VisualBasic.png"
+                          alt="Visual Basic"
+                          class="img-cur"
+                        />
+                        <a href="#">Visual Bacic</a>
+                      </li>
+                      <!-------------- CURSO: C# ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Programacion/VisualC.jpeg"
+                          alt="C#"
+                          class="img-cur"
+                        />
+                        <a href="#">C#</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!----------------------------------- CONTENEDOR DE CURSOS DE CIBERSEGURIDAD -------------------------------------------->
+                  <div class="text-contai-cur gestion">
+                    <!-- TITULO DE CIBERSEGURIDAD -->
+                    <h3 class="title-cur">
+                      Cursos De Ciberseguridad<br /><span class="ciberseguridad"
+                        >Proximamente</span
+                      >
+                    </h3>
+                    <!-- LISTA DE CURSOS DE CIBERSEGURIDAD -->
+                    <ul class="list-cur">
+                      <!-------------- CURSO: PYTHON ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ciberseguridad/Pyrhon.png"
+                          alt="Python"
+                          class="img-cur"
+                        />
+                        <a href="#">Python</a>
+                      </li>
+                      <!-------------- CURSO: BASH ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ciberseguridad/Bash.jpg"
+                          alt="Bash"
+                          class="img-cur"
+                        />
+                        <a href="#">Bash</a>
+                      </li>
+                      <!-------------- CURSO: RUBY ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ciberseguridad/Ruby.png"
+                          alt="Ruby"
+                          class="img-cur"
+                        />
+                        <a href="#">Ruby</a>
+                      </li>
+                      <!-------------- CURSO: METASPLOIT ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ciberseguridad/Metasploit.png"
+                          alt="Metasploit"
+                          class="img-cur"
+                        />
+                        <a href="#">Metasploit</a>
+                      </li>
+                      <!-------------- CURSO: BURP SITE ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ciberseguridad/BurpSite.png"
+                          alt="Burp Site"
+                          class="img-cur"
+                        />
+                        <a href="#">Burp Site</a>
+                      </li>
+                      <!-------------- CURSO: WIRESHARK ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ciberseguridad/WireSahark.png"
+                          alt="Wireshark"
+                          class="img-cur"
+                        />
+                        <a href="#" i>Wireshark</a>
+                      </li>
+                      <!-------------- CURSO: NMAP ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Ciberseguridad/Nmap.webp"
+                          alt="Nmap"
+                          class="img-cur"
+                        />
+                        <a href="#">Nmap</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!----------------------------------- CONTENEDOR DE CURSOS DE GESTION -------------------------------------------->
+                  <div class="text-contai-cur gestion">
+                    <!-- TITULO DE GESTION -->
+                    <h3 class="title-cur">Cursos De Gestion</h3>
+                    <!-- LISTA DE CURSOS DE GESTION -->
+                    <ul class="list-cur">
+                      <!-------------- CURSO: CONCILIACION BANCARIA ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Gestion/ConciBancaria.png"
+                          alt="Conciliacion Bancaria"
+                          class="img-cur"
+                        />
+                        <a href="#">Conci.Bancaria</a>
+                      </li>
+                      <!-------------- CURSO: LIQUIDACION DE SUELDOS ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Gestion/LiquidacionDeSueldos.png"
+                          alt="Liquidacion De Sueldos"
+                          class="img-cur"
+                        />
+                        <a href="#">Liq.De.Sueldos</a>
+                      </li>
+                      <!-------------- CURSO: TANGO GESTION ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Gestion/TangoGestion.png"
+                          alt="Tango Gestion"
+                          class="img-cur"
+                        />
+                        <a href="#">Tango Gestion</a>
+                      </li>
+                      <!-------------- CURSO: LINKEDLN ----------------->
+                      <li class="contai-cur">
+                        <img
+                          src="img/cursos/Gestion/Linkedln.png"
+                          alt="Linkedln"
+                          class="img-cur"
+                        />
+                        <a href="#">Linkedln</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img
+                    src="img/icon/EduLogo.png"
+                    alt="Logo"
+                    class="img-logo-edu"
+                  />
+                </div>
+              </li>
+              <!------------------ DROPDOWN DE ESPECIALIZACIONES ----------------->
+              <li class="menu-list dropdown">
+                <a href="#"
+                  >Especializaciones <i class="bi bi-arrow-down-short"></i
+                ></a>
+                <div class="dropdown-content esp">
+                  <!----------------------------- CONTENEDOR DE ESPCIALIZACION EN DISEÑO MULTIMEDIA ------------------------>
+                  <div class="text-contai-esp">
+                    <img
+                      src="img/diseños/Especializaciones/DiseñoMultimedia.png"
+                      alt="Diseño Multimedia"
+                      class="img-esp"
+                    />
+                    <div class="text">
+                      <h2 class="title-cur">Diseño Multimedia</h2>
+                      <p class="parrafo-esp-nav">
+                        El Diseño Multimedial combina texto, fotografías,
+                        videos, sonido y animación en un soporte digital,
+                        abarcando áreas como Diseño Gráfico, Editorial y Web.
+                      </p>
+                      <button class="btn-esp">Temario</button>
+                    </div>
+                  </div>
+                  <!----------------------------- CONTENEDOR DE ESPCIALIZACION EN DISEÑO GRAFICO ------------------------>
+                  <div class="text-contai-esp">
+                    <img
+                      src="img/diseños/Especializaciones/DiseñoGrafico.png"
+                      alt="Diseño Grafico"
+                      class="img-esp"
+                    />
+                    <div class="text">
+                      <h2 class="title-cur">Diseño Grafico</h2>
+                      <p class="parrafo-esp-nav">
+                        Actividad creativa y técnica que transmite ideas
+                        mediante imágenes, como en libros, carteles y folletos,
+                        utilizando herramientas como Corel y Photoshop.
+                      </p>
+                      <button class="btn-esp">Temario</button>
+                    </div>
+                  </div>
+                  <!----------------------------- CONTENEDOR DE ESPCIALIZACION EN DISEÑO WEB ------------------------>
+                  <div class="text-contai-esp">
+                    <img
+                      src="img/diseños/Especializaciones/DiseñoWeb.png"
+                      alt="Diseño Web"
+                      class="img-esp"
+                    />
+                    <div class="text">
+                      <h2 class="title-cur">Diseño Web</h2>
+                      <p class="parrafo-esp-nav">
+                        El diseño web consiste en planificar, diseñar,
+                        implementar y mantener sitios web. Incluye diseño
+                        gráfico, experiencia de usuario, interactividad, y
+                        optimización para buscadores.
+                      </p>
+                      <button class="btn-esp">Temario</button>
+                    </div>
+                  </div>
+                  <!----------------------------- CONTENEDOR DE ESPCIALIZACION EN PROGRAMACION ------------------------>
+                  <div class="text-contai-esp">
+                    <img
+                      src="img/diseños/Especializaciones/Programacion.png"
+                      alt="Programacion"
+                      class="img-esp"
+                    />
+                    <div class="text">
+                      <h2 class="title-cur">Programacion</h2>
+                      <p class="parrafo-esp-nav">
+                        La programación es el proceso de diseñar, codificar,
+                        depurar y mantener código fuente en un lenguaje de
+                        programación para crear programas con un comportamiento
+                        deseado.
+                      </p>
+                      <button class="btn-esp">Temario</button>
+                    </div>
+                  </div>
+                  <!----------------------------- CONTENEDOR DE ESPCIALIZACION EN OFIMATICA ------------------------>
+                  <div class="text-contai-esp">
+                    <img
+                      src="img/diseños/Especializaciones/Office.png"
+                      alt="Office"
+                      class="img-esp"
+                    />
+                    <div class="text">
+                      <h2 class="title-cur">Ofimatica</h2>
+                      <p class="parrafo-esp-nav">
+                        El Técnico en Ofimática es un especialista en el manejo
+                        de computadoras y aplicaciones de oficina, capaz de
+                        aumentar la productividad y colaboración en empresas,
+                        cumpliendo estándares internacionales.
+                      </p>
+                      <button class="btn-esp">Temario</button>
+                    </div>
+                  </div>
+                  <!----------------------------- CONTENEDOR DE ESPCIALIZACION EN GESTION EMPRESARIAL ------------------------>
+                  <div class="text-contai-esp">
+                    <img
+                      src="img/diseños/Especializaciones/Gestion.png"
+                      alt="Gestion Empresarial"
+                      class="img-esp"
+                    />
+                    <div class="text">
+                      <h2 class="title-cur">Gestion Empresarial</h2>
+                      <p class="parrafo-esp-nav">
+                        El graduado en Gestión Empresarial mejora la
+                        productividad y competitividad de empresas,
+                        fortaleciendo las habilidades de quienes ocupan puestos
+                        de responsabilidad en gestión administrativa.
+                      </p>
+                      <button class="btn-esp">Temario</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#Bachiller">Bachiller</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="actions-mobi">
+            <button class="menu-toggle" aria-label="Abrir menú">
+              <i class="bi bi-list-task"></i>
+            </button>
+            <div class="container-cart-mobile">
+              <button class="btn-cart-mobile">
+                <a href="cart.html"><i class="bi bi-cart3"></i></a>
+              </button>
+              <span id="contador-mobi" class="contador-cart-mobile"></span>
+            </div>
+          </div>
+
+          <section class="sidebar-container">
+            <article class="sidebar-header">
+              <button class="btn-cuenta azul"><span>Ingresar</span></button>
+              <button class="btn-sesion amari"><span>Aplicar</span></button>
+              <button class="menu-close" aria-label="Cerrar menú">✖</button>
+              <hr class="custom-hr-side" />
+            </article>
+            <article class="sidebar-cursos">
+              <section class="sidebar-container cur">
+                <div class="menu-close-cur" aria-label="Cerrar menu cursos">
+                  <i class="bi bi-arrow-left-short"></i>
+                  <span class="text-close">Menu</span>
+                </div>
+                <ul class="list-cur-side">
+                  <li>
+                    <a href="#">A.Photoshop</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">A.Illustrator</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">A.Dreamweaver</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">A.Fireworks</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Adobe Flash</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">3D Studio</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Corel Draw</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">AutoCAD</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Foto.Digital</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Fund.Diseño</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar-container cur">
+                <div class="menu-close-cur" aria-label="Cerrar menu cursos">
+                  <i class="bi bi-arrow-left-short"></i>
+                  <span class="text-close">Menu</span>
+                </div>
+                <ul class="list-cur-side">
+                  <li>
+                    <a href="indexHTML.html">HTML</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="indexCSS.html">CSS</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">JavaScript</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">PHP</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">MySQL</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Java</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Visual Bacic</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">C#</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar-container cur">
+                <div class="menu-close-cur" aria-label="Cerrar menu cursos">
+                  <i class="bi bi-arrow-left-short"></i>
+                  <span class="text-close">Menu</span>
+                </div>
+                <ul class="list-cur-side">
+                  <li>
+                    <a href="#">Word</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Excel</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Access</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">PowerPoint</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Project</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Visio</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Outlook</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Windows</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar-container cur">
+                <div class="menu-close-cur" aria-label="Cerrar menu cursos">
+                  <i class="bi bi-arrow-left-short"></i>
+                  <span class="text-close">Menu</span>
+                </div>
+                <ul class="list-cur-side">
+                  <li>
+                    <a href="#">Conci.Bancaria</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Liq.De.Sueldos</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Tango Gestion</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Linkedln</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar-container cur">
+                <div class="menu-close-cur" aria-label="Cerrar menu cursos">
+                  <i class="bi bi-arrow-left-short"></i>
+                  <span class="text-close">Menu</span>
+                </div>
+                <ul class="list-cur-side">
+                  <li>
+                    <a href="#">Python</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Bash</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Ruby</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Metasploit</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Burp Site</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Wireshark</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                  <li>
+                    <a href="#">Nmap</a>
+                    <i class="bi bi-arrow-right-short"></i>
+                  </li>
+                </ul>
+              </section>
+            </article>
+            <article class="sidebar-main">
+              <div class="sidebar-section">
+                <ul class="list-side">
+                  <li class="dropdown-sideBar">
+                    <a href="#" class="sidebar-link">Educentro</a>
+                  </li>
+                  <li class="dropdown-sideBar">
+                    <a href="#" class="sidebar-link toggleCourses"
+                      >Cursos <i class="bi bi-arrow-down-short flecha"></i
+                    ></a>
+                    <!-- Aquí aparecerán las categorías dinámicamente -->
+                    <ul class="courses-list">
+                      <li class="dropdown-cursos cursoSide">
+                        <span class="course-link cur"> Diseño </span>
+                        <i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos cursoSide">
+                        <span class="course-link">Programación</span
+                        ><i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos cursoSide">
+                        <span class="course-link">Ofimatica</span
+                        ><i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos cursoSide">
+                        <span class="course-link">Gestion</span
+                        ><i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos cursoSide">
+                        <span class="course-link">Ciberseguridad</span
+                        ><i class="bi bi-arrow-right-short"></i>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-sideBar">
+                    <a href="#" class="sidebar-link toggleCourses"
+                      >Especializaciones
+                      <i class="bi bi-arrow-down-short flecha"></i
+                    ></a>
+                    <ul class="courses-list">
+                      <li class="dropdown-cursos">
+                        <a href="#" class="course-link cur" id="toggle-cur">
+                          Diseño Multimedia
+                        </a>
+                        <i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos">
+                        <a href="#" class="course-link cur" id="toggle-cur">
+                          Diseño Grafico
+                        </a>
+                        <i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos">
+                        <a href="#" class="course-link cur" id="toggle-cur">
+                          Diseño Web
+                        </a>
+                        <i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos">
+                        <a href="#" class="course-link cur" id="toggle-cur">
+                          Programacion
+                        </a>
+                        <i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos">
+                        <a href="#" class="course-link cur" id="toggle-cur">
+                          Ofimatica
+                        </a>
+                        <i class="bi bi-arrow-right-short"></i>
+                      </li>
+                      <li class="dropdown-cursos">
+                        <a href="#" class="course-link cur" id="toggle-cur">
+                          Gestion Empresarial
+                        </a>
+                        <i class="bi bi-arrow-right-short"></i>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-sideBar">
+                    <a href="#" class="sidebar-link">Bachiller</a>
+                  </li>
+                  <li class="dropdown-sideBar">
+                    <a href="#" class="sidebar-link">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="sidebar-footer">
+              <img
+                src="img/icon/EduLogo.png"
+                alt="Logo Educentro"
+                class="img-side-edu"
+              />
+            </article>
+          </section>
+          <!----------------------- REGISTRO Y CARRITO DE COMPRAS --------------->
+          <article class="cart-sesi">
+            <div class="cuenta">
+              <button class="btn-cuenta azul"><span>Ingresar</span></button>
+              <button class="btn-sesion amari"><span>Aplicar</span></button>
+            </div>
+            <div class="container-productos">
+              <button class="btn-cart"><i class="bi bi-cart3"></i></button>
+              <span id="contador" class="contador-cart"></span>
+
+              <div class="cart-details">
+                <ul class="cart-items">
+                  <!-- Aquí se agregarán dinámicamente los productos -->
+                </ul>
+                <div class="cart-total">
+                  <p>Total: <span class="total-price">0,00 $</span></p>
+                  <a href="cart.html">
+                    <button class="go-to-cart">Ir a la cesta</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </nav>
+        <div class="sidebar-overlay"></div>
+        <!-- FIN DE LA NAVEGACION -->
+      </section>
+      <div class="container-text-cart">
+        <p class="text-cart-cur"></p>
+      </div>
+    </header>
+    <-- FIN DEL HEADER ->
+    <div class="container-sep">
+      <h1>Carrito de Compras</h1>
+      <div class="cart-items-container">
+        <!-- Aquí se agregarán los productos del carrito dinámicamente -->
+      </div>
+
+      <div class="cart-summary">
+        <p>Total: <span class="total-price-cart">0,00 $</span></p>
+        <button class="pay-now">Pagar ahora</button>
+      </div>
     </div>
     <script>
       // Simulamos el carrito que se almacena en el localStorage (se mantendrá después de recargar la página)
@@ -105,7 +996,7 @@
       const cartItemsContainer = document.querySelector(
         ".cart-items-container"
       );
-      const totalPriceElement = document.querySelector(".total-price");
+      const totalPriceElement = document.querySelector(".total-price-cart");
 
       // Función para actualizar el carrito en la página
       function actualizarCarrito() {
@@ -126,7 +1017,7 @@
       <img src="${producto.imagen}" alt="${producto.nombre}">
       <div>
         <p>${producto.nombre}</p>
-        <p>${producto.precio.toFixed(2)} US$</p>
+        <p>${producto.precio.toLocaleString("es-AR")} $</p>
       </div>
       <button class="remove-item" data-index="${index}">Eliminar</button>
       <button class="save-for-later" data-index="${index}">Guardar para después</button>
@@ -136,7 +1027,7 @@
         });
 
         // Actualizar el total
-        totalPriceElement.textContent = `${total.toFixed(2)} US$`;
+        totalPriceElement.textContent = `${total.toLocaleString("es-AR")} $`;
       }
 
       // Función para eliminar un producto del carrito
