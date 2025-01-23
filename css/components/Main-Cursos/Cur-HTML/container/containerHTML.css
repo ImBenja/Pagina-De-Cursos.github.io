@@ -81,7 +81,7 @@
       grid-template-columns: 300px 50px;
       gap: 1rem;
       margin-top: 1.5rem;
-      .btn-cart {
+      .btn-cart-cur {
         background-color: var(--violeta);
         color: #fff;
         font-family: "Poppins", sans-serif;
@@ -733,6 +733,7 @@
   display: flex;
   justify-content: center;
   opacity: 0; /* Inicia oculto */
+  visibility: hidden;
   transition: opacity 0.5s ease, transform 1.5s ease; /* Transición suave */
   background-color: green;
   p {
@@ -743,4 +744,29 @@
 }
 .container-text-true.active {
   opacity: 1; /* Hace visible el contenedor */
+  visibility: visible;
+}
+
+.container-text-cart {
+  border-radius: 5px;
+  position: fixed;
+  padding: 1rem;
+  top: 10%;
+  left: 30%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  opacity: 0; /* Inicia oculto */
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 1.5s ease; /* Transición suave */
+  background-color: green;
+  p {
+    color: var(--blanco);
+    font-family: "Poppins";
+    font-weight: bold;
+  }
+}
+.container-text-cart.active {
+  opacity: 1; /* Hace visible el contenedor */
+  visibility: visible;
 }

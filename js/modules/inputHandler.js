@@ -8,4 +8,7 @@ export function inputHandler() {
     // Actualizar el valor del campo con el texto en mayúsculas
     inputField.value = processedInput;
   });
+  document.addEventListener(".form-cupon").onsubmit = function (e) {
+    e.preventDefault();
+  };
 }

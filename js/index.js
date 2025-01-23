@@ -29,7 +29,7 @@ const contadorMobile = document.getElementById("contador-mobi");
 const productos = [
   {
     id: 1,
-    nombre: "Curso de HTML",
+    nombre: "<p class='nombre-cur'>Curso de HTML</p>",
     autor: "Curso: Programacion",
     precio: 50000,
     imagen: "img/cursos/Programacion/HTML.png",
@@ -53,19 +53,47 @@ const totalPriceElement = document.querySelector(".total-price");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Función para agregar un producto al carrito
-function agregarAlCarrito(idProducto) {
+function agregarAlCarrito(idProducto, button) {
+  const productoEnCarrito = carrito.some((prod) => prod.id === idProducto);
+  const containerAgregado = document.querySelector(".container-text-cart");
+
+  if (productoEnCarrito) {
+    containerAgregado.classList.add("active");
+    setTimeout(() => {
+      containerAgregado.classList.remove("active");
+    }, 2000);
+    button.textContent = "Ir a la Cesta";
+    if (button.textContent === "Ir a la Cesta") {
+      button.onclick = () => {
+        window.location.href = "cart.html";
+      };
+    }
+    return;
+  }
+
   const producto = productos.find((prod) => prod.id === idProducto);
   if (producto) {
     carrito.push(producto);
     localStorage.setItem("carrito", JSON.stringify(carrito));
     actualizarCarrito();
+    updateCounter();
+
+    containerAgregado.classList.add("active");
+    setTimeout(() => {
+      containerAgregado.classList.remove("active");
+    }, 2000);
+    button.textContent = "Ir a la Cesta";
+
+    if (button.textContent === "Ir a la Cesta") {
+      button.onclick = () => {
+        window.location.href = "cart.html";
+      };
+    }
   }
-  // Actualizar el contador
-  updateCounter();
 }
 
+// Función para actualizar el contador
 function updateCounter() {
-  // Calcular la cantidad total de productos en el carrito
   const totalItems = carrito.length; // Contamos cuántos productos hay en el carrito
   contador.textContent = totalItems;
   contadorMobile.textContent = totalItems;
@@ -74,7 +102,7 @@ function updateCounter() {
 // Función para actualizar el contenido del carrito
 function actualizarCarrito() {
   if (!cartItemsContainer || !totalPriceElement) return;
-  // Limpiar el contenido del carrito
+
   cartItemsContainer.innerHTML = "";
 
   if (carrito.length === 0) {
@@ -84,10 +112,8 @@ function actualizarCarrito() {
     return;
   }
 
-  // Calcular el total
   let total = 0;
 
-  // Añadir cada producto al carrito
   carrito.forEach((producto) => {
     total += producto.precio;
 
@@ -95,26 +121,38 @@ function actualizarCarrito() {
     li.innerHTML = `
 <img src="${producto.imagen}" alt="${producto.nombre}">
 <div>
-<p>${producto.nombre}</p>
-<p>${producto.autor}</p>
-<p>${producto.precio.toLocaleString("es-AR")} $</p>
-<p>${producto.link}</p>
+  <p class='nombre-cur'>${producto.nombre}</p>
+  <p>${producto.autor}</p>
+  <p>${producto.precio.toLocaleString("es-AR")} $</p>
+  <p>${producto.link}</p>
 </div>
 `;
     cartItemsContainer.appendChild(li);
   });
 
-  // Actualizar el precio total
   totalPriceElement.textContent = `${total.toLocaleString("es-AR")} $`;
 }
 
 // Agregar eventos a los botones "Agregar al carrito"
-document.querySelectorAll(".btn-cart").forEach((button) => {
+document.querySelectorAll(".btn-cart-cur").forEach((button) => {
+  const productId = parseInt(
+    button.closest(".course-price").getAttribute("data-id")
+  );
+
+  // Verificar si el producto ya está en el carrito al cargar la página
+  const productoEnCarrito = carrito.some((prod) => prod.id === productId);
+  if (productoEnCarrito) {
+    button.textContent = "Ir a la Cesta";
+    button.disabled = false; // Desactivar el botón
+    if (button.textContent === "Ir a la Cesta") {
+      button.onclick = () => {
+        window.location.href = "cart.html";
+      };
+    }
+  }
+
   button.addEventListener("click", function () {
-    const productId = parseInt(
-      this.closest(".course-price").getAttribute("data-id")
-    );
-    agregarAlCarrito(productId);
+    agregarAlCarrito(productId, button);
   });
 });
 
